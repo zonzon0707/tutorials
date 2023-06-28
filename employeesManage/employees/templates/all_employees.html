@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Employee</h1>
+
+
+<form action = "{% url 'employees' %}" method = "POST">
+    {% csrf_token %}
+    <label for="emId">employee id: </label> 
+    <input name="searchId" type="text" />
+    <button name="searchButton" type="submit">Search</button>
+</form>
+
+<!-- <form action = "{% url 'employees' %}" method = "get">
+    <input name="searchBar" type = "text" placeholder="Input employee id...">
+</form> -->
+
+
+<ul>
+  {% if myEmployees is not None %}
+    {% for x in myEmployees %}
+        <li><a href = "details/{{ x.id}}"> {{ x.employeeId }}</a> {{ x.employeeName }}</li>
+    {% endfor %}
+  {% else %}
+    <p>No relevant data</p>
+  {% endif %}
+</ul>
+
+</body>
+</html>
