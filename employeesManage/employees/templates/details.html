@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html>
-
+<style>
+    table, th, td{
+        border: 1px solid black;
+    }
+    </style>
 <body>
+<h3>
+    社員基礎情報
+</h3>
+<p>EID: {{ myEmployees.employeeId }}</p>
+<table style="width: 100%; ">
+    <tr>
+        <td>EID</td>
+        <td> {{ myEmployees.employeeId }}  </td>
+    </tr>
 
-<h1>{{ myEmployees.employeeId }} {{ myEmployees.employeeName }}</h1>
-  
-<!-- <p>Phone: {{ mymember.phone }}</p>
-<p>Member since: {{ mymember.joined_date }}</p> -->
-<p>Phone: </p>
-<p>Member since: </p>
-<p>Back to <a href="/employees">Employees</a></p>
+    <tr>
+        <td>名前</td>
+        <td> {{ myEmployees.employeeName }}  </td>
+    </tr>
+    <tr>
+        <td> 社員番号</td>
+        <td> {{ myEmployees.employeeNumber }}</li> </td>
+    </tr>     
+</table>
+
+<p style = "text-align:right;">
+    <a href="/employees">戻る</a>
+    <a href="/update" >編集</a> 
+</p>
 
 </body>
 </html>

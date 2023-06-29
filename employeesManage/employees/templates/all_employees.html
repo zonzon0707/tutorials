@@ -2,6 +2,12 @@
 <html>
 <body>
 
+<style>
+  table, th, td{
+    border: 1px solid black;
+  }
+</style>
+
 <h1>Employee</h1>
 
 
@@ -16,16 +22,41 @@
     <input name="searchBar" type = "text" placeholder="Input employee id...">
 </form> -->
 
+<h3>社員情報一覧</h3>
+<table style="width: 100%;">
 
-<ul>
+    <thead>
+        <tr>
+            <th>EID</th>
+            <th>名前</th>
+            <th>社員番号</th>
+        </tr>
+    </thead>
+<tbody>
   {% if myEmployees is not None %}
     {% for x in myEmployees %}
-        <li><a href = "details/{{ x.id}}"> {{ x.employeeId }}</a> {{ x.employeeName }}</li>
+        <tr>
+          <td><a href = "details/{{ x.id}}"> {{ x.employeeId }}</a>  </td>
+          <td>{{ x.employeeName }}  </td>
+          <td> {{ x.employeeNumber }}</li> </td>
+        </tr>     
     {% endfor %}
   {% else %}
     <p>No relevant data</p>
   {% endif %}
-</ul>
+  </tbody>
+</table>
+
+<!-- <ul>
+  {% if myEmployees is not None %}
+    {% for x in myEmployees %}
+        <li><a href = "details/{{ x.id}}"> {{ x.employeeId }}</a> 
+        {{ x.employeeName }} {{ x.employeeNumber }}</li>
+    {% endfor %}
+  {% else %}
+    <p>No relevant data</p>
+  {% endif %}
+</ul> -->
 
 </body>
 </html>

@@ -6,4 +6,4 @@ from django.db import models
 class Employee(models.Model):
     employeeId = models.IntegerField()
     employeeName = models.CharField(max_length = 255)
-
+    employeeNumber = models.IntegerField(null = True)
